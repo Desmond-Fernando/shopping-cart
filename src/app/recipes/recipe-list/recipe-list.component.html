@@ -4,20 +4,15 @@
   </div>
 </div>
 <hr>
-<div class="card mb-3" style="max-width: 540px;" *ngFor="let recipe of recipes">
-  <div class="row no-gutters">
-    <div class="col-md-4">
-      <img [src]="recipe.imagePath" alt="{{ recipe.name }}" style="max-width: 120px;">
-    </div>
-    <div class="col-md-8">
-      <div class="card-body">
-        <h5 class="card-title">{{ recipe.name }}</h5>
-        <p class="card-text">{{ recipe.description }}</p>
-      </div>
-    </div>
+<div class="row">
+  <div class="col-xs-12 ml-3">
+    <app-recipe-item *ngFor="let recipeEl of recipes"
+    [recipe]="recipeEl"
+    (recipeSelected)="onRecipeSelected(recipeEl)"
+    ></app-recipe-item>
   </div>
 </div>
-<!--    <app-recipe-item></app-recipe-item>-->
+
 
 
 

@@ -1,14 +1,14 @@
 <div class="row">
   <div class="col-xs-12 mt-3">
-    <div class="card" style="width: 30rem;">
-      <img src="https://steamykitchen.com/wp-content/uploads/2012/08/chinese-broccoli-beef-recipe-9402.jpg"
-           class="card-img-top" alt="..">
+    <div class="card" style="width: 25rem; ">
+      <img [src]="recipe.imagePath"
+           class="card-img-top" alt="{{ recipe.name }}">
     </div>
   </div>
 </div>
 <div class="row">
   <div class="col-xs-12 ml-3 mt-1">
-    <h3 class="card-title">Recipe Name</h3>
+    <h3 class="card-title">{{ recipe.name }}</h3>
     <div class="dropdown">
       <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown"
               aria-haspopup="true" aria-expanded="false">
@@ -20,5 +20,15 @@
         <a class="dropdown-item" href="#">Delete Recipe</a>
       </div>
     </div>
+  </div>
+</div>
+<div class="row">
+  <div class="col-xs-12 mt-3">
+    {{ recipe.description}}
+  </div>
+</div>
+<div class="row">
+  <div class="col-xs-12 mt-3">
+    ingredients
   </div>
 </div>
