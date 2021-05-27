@@ -7,6 +7,7 @@ import {EventEmitter, Output, Component, OnInit} from '@angular/core';
 })
 export class HeaderComponent implements OnInit {
   @Output() featureSelected =  new EventEmitter<string>();
+  public toggleDropdown: boolean;
 
   constructor() {
   }
@@ -16,5 +17,9 @@ export class HeaderComponent implements OnInit {
 
   onSelect(feature: string) {
     this.featureSelected.emit(feature);
+  }
+
+  onIsShown(toggle: boolean) {
+    this.toggleDropdown = toggle;
   }
 }

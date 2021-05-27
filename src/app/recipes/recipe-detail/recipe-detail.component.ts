@@ -8,6 +8,7 @@ import {Recipe} from "../recipe.model";
 })
 export class RecipeDetailComponent implements OnInit {
   @Input() recipe: Recipe;
+  public toggleDropdown: boolean;
 
   constructor() {
   }
@@ -15,4 +16,7 @@ export class RecipeDetailComponent implements OnInit {
   ngOnInit(): void {
   }
 
+  onIsShown(toggle: boolean) {
+    this.toggleDropdown = toggle;
+  }
 }

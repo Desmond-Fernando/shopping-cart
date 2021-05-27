@@ -9,12 +9,14 @@
 <div class="row">
   <div class="col-xs-12 ml-3 mt-1">
     <h3 class="card-title">{{ recipe.name }}</h3>
-    <div class="dropdown">
+    <div class="dropdown " appDropdown (isShown)="onIsShown($event)">
       <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown"
-              aria-haspopup="true" aria-expanded="false">
-        Dropdown button
+              aria-haspopup="true" aria-expanded="true">
+        Manage Recipe
       </button>
-      <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+      <div class="dropdown-menu"
+           [ngClass]="{'show':toggleDropdown}"
+           aria-labelledby="dropdownMenuButton" >
         <a class="dropdown-item" href="#">To Shopping List</a>
         <a class="dropdown-item" href="#">Edit Recipe</a>
         <a class="dropdown-item" href="#">Delete Recipe</a>
@@ -22,6 +24,7 @@
     </div>
   </div>
 </div>
+
 <div class="row">
   <div class="col-xs-12 mt-3">
     {{ recipe.description}}
