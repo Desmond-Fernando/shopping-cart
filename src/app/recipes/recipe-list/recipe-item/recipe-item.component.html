@@ -1,5 +1,8 @@
-<div class="card mb-3" style="max-width: 540px; cursor: pointer;"
-(click)="onSelected()">
+<div class="card mb-3 " style="max-width: 540px; cursor: pointer;"
+[routerLink]="[index]"
+routerLinkActive="bg-light"
+>
+<!--(click)="onSelected()">-->
   <div class="row no-gutters">
     <div class="col-md-4">
       <img [src]="recipe.imagePath" alt="{{ recipe.name }}" style="max-width: 120px;">
